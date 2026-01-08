@@ -30,6 +30,13 @@ function checkEnvironment() {
     console.error('Please check your .env file');
     process.exit(1);
   }
+  
+  // Check for placeholder values
+  if (process.env.PRIVATE_KEY === 'your_private_key_here') {
+    console.error('❌ PRIVATE_KEY is still set to the example value');
+    console.error('Please update .env with your actual private key');
+    process.exit(1);
+  }
 }
 
 // Main function
