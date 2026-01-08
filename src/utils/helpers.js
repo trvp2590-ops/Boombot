@@ -1,9 +1,10 @@
+const { ethers } = require('ethers');
+
 /**
  * Format token amount with proper decimals
  */
 function formatTokenAmount(amount, decimals = 18) {
   try {
-    const { ethers } = require('ethers');
     return ethers.formatUnits(amount, decimals);
   } catch (error) {
     console.error('Error formatting token amount:', error);
@@ -16,7 +17,6 @@ function formatTokenAmount(amount, decimals = 18) {
  */
 function parseTokenAmount(amount, decimals = 18) {
   try {
-    const { ethers } = require('ethers');
     return ethers.parseUnits(amount, decimals);
   } catch (error) {
     console.error('Error parsing token amount:', error);
@@ -29,7 +29,6 @@ function parseTokenAmount(amount, decimals = 18) {
  */
 function isValidAddress(address) {
   try {
-    const { ethers } = require('ethers');
     return ethers.isAddress(address);
   } catch (error) {
     return false;

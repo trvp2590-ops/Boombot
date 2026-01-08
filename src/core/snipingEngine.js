@@ -61,12 +61,16 @@ class SnipingEngine {
     console.log('⚡ Executing snipe with options:', options);
 
     // Simulated response for demonstration
+    // Generate a mock transaction hash for testing purposes
+    const mockTxHash = '0x' + Array(64).fill(0).map(() => Math.floor(Math.random() * 16).toString(16)).join('');
+
     return {
       success: true,
       token: tokenAddress,
       amount: options.amount,
-      txHash: '0x' + '0'.repeat(64), // Placeholder transaction hash
+      txHash: mockTxHash,
       chain: options.chain,
+      note: 'SIMULATION - Replace with actual DEX integration',
     };
   }
 

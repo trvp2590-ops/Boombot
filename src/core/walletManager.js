@@ -40,9 +40,19 @@ class WalletManager {
       throw new Error('Wallet not initialized');
     }
 
+    // Dynamically determine available chains based on configured providers
+    const availableChains = Object.keys(this.providers).map(chain => 
+      chain.charAt(0).toUpperCase() + chain.slice(1)
+    );
+    
+    // Add Solana if configured
+    if (config.blockchain.solana.rpcUrl) {
+      availableChains.push('Solana');
+    }
+
     return {
       address: this.wallet.address,
-      chains: ['Ethereum', 'BSC', 'Base', 'Solana'],
+      chains: availableChains.length > 0 ? availableChains : ['None configured'],
     };
   }
 
@@ -72,8 +82,10 @@ class WalletManager {
         balances.Base = `${ethers.formatEther(baseBalance)} ETH`;
       }
 
-      // Solana balance would require different library
-      balances.Solana = 'Not configured';
+      // Solana balance would require different library (only add if configured)
+      if (config.blockchain.solana.rpcUrl) {
+        balances.Solana = '0.0 SOL (requires Solana library)';
+      }
 
     } catch (error) {
       console.error('Error fetching balances:', error);
