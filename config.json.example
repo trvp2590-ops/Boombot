@@ -1,0 +1,45 @@
+{
+  "bot": {
+    "name": "Boombot",
+    "version": "1.0.0",
+    "enabled": true
+  },
+  "trading": {
+    "minLiquidity": 10000,
+    "maxBuyAmount": 1,
+    "autoBuy": true,
+    "autoSell": false,
+    "slippage": 5,
+    "priorityFee": {
+      "enabled": true,
+      "amount": "auto"
+    }
+  },
+  "monitoring": {
+    "checkInterval": 1000,
+    "targets": [],
+    "blacklist": []
+  },
+  "notifications": {
+    "discord": {
+      "enabled": false,
+      "webhook": ""
+    },
+    "telegram": {
+      "enabled": false,
+      "botToken": "",
+      "chatId": ""
+    }
+  },
+  "security": {
+    "maxGasPrice": 1000,
+    "stopLoss": {
+      "enabled": false,
+      "percentage": 50
+    },
+    "takeProfit": {
+      "enabled": false,
+      "percentage": 100
+    }
+  }
+}

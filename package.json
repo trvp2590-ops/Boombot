@@ -1,0 +1,26 @@
+{
+  "name": "boombot",
+  "version": "1.0.0",
+  "description": "Bloom sniping bot for cryptocurrency trading",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "bot",
+    "trading",
+    "cryptocurrency",
+    "solana",
+    "sniping"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  }
+}
